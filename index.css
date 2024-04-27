@@ -1,0 +1,43 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.93);
+    background-image: url(imgs/ceuEstrelado.png);
+    overflow: hidden;
+}
+#NaveMain{
+    width: 80%;
+}
+img{
+    position: absolute;
+    bottom: 0;
+    height: 13vh;
+}
+#projetil{
+    position: absolute;
+}
+.invisivel{
+    display: none;
+}
+#hitboxMain{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin: 4%;
+    height: 99%;
+    width: 15vh;
+}
+@keyframes animacao{
+    from{
+        bottom: 0%;
+    }
+    to{
+        bottom: 100%;
+    }
+}
