@@ -1,0 +1,158 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Pixelify Sans", sans-serif;
+    color: white;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/imgs/ceuEstrelado.png);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+#titulo{
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    top: 0%;
+    padding: 1%;
+    font-size: 4vh;
+}
+.NomeDoJogo{
+    position: relative;
+    animation: mudarCorDoTitulo 3s infinite linear;
+}
+#vol{
+    z-index: 3;
+    position: absolute;
+    width: 10vh;
+    right: 0;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh;
+    cursor: pointer;
+}
+#vol:hover{
+    animation: aumentarBotaoDevol 0.5s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes aumentarBotaoDevol {
+    from{
+        transform: scale(1.0);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+#vol > img{
+    height: 100%;
+    height: 100%;
+}
+@keyframes mudarCorDoTitulo {
+    0%{
+        color: red;
+        transform: scale(1.0);
+    }
+    25%{
+        color: yellowgreen;
+        transform: scale(1.1);
+    }
+    50%{
+        color: purple;
+        transform: scale(1.0);
+    }
+    99%{
+        color: yellow;
+        transform: scale(1.0);
+    }
+    100%{
+        color: red;
+        transform: scale(1.0);
+    }
+}
+#Menu{
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+.botao{
+    margin: 3vh;
+    position: relative;
+    top: 20vh;
+    z-index: 3;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20vh;
+    height: 10vh;
+}
+.botao:hover{
+    animation: MudarCorDoMeuBotao 1s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes MudarCorDoMeuBotao {
+    from{
+        background-color: orange;
+    }
+    to{
+        background-color: red;
+    }
+}
+#nave{
+    z-index: 1;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 30vh;
+    height: 30vh;
+}
+#predil{
+    width: 16vh;
+    height: 16vh;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    background-image: url(/imgs/Predil.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+#moon{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-image: url(/imgs/moonv2.png);
+    background-position: left 100%;
+    background-repeat: repeat-x;
+}
+#direitos{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    left: 2%;
+}
+audio{
+    position: absolute;
+    z-index: 4;
+}
