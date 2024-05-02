@@ -18,7 +18,7 @@ let Naveobj ={
             return posicao
         }
 })},
-    Atirar: document.addEventListener("keydown", function Atirar(){
+    atirar: function(){ document.addEventListener("keydown",  function(event){
         if(event.code == "Space"){
         if(!conferir){
             return
@@ -28,7 +28,7 @@ let Naveobj ={
         setTimeout(() => {
             document.body.appendChild(tiro)
             tiro.style.left =  posicao + 5 + "%"
-        }, 0.1)
+        }, 1)
         tiro.style.animation = "animacao 1s linear"
         conferir = false
     }
@@ -38,7 +38,7 @@ let Naveobj ={
     }, 1000)
 }
 })
-}
+}}
         /* Posição da nave principal */
         let posicao = 0
         Naveobj.andar()
@@ -48,5 +48,20 @@ let Naveobj ={
         tiro = new Image
         let conferir = true
         tiro.src = "/imgs/fire.png"
-        Naveobj.Atirar()
+        Naveobj.atirar()
 //
+var tiroposicao = tiro.getBoundingClientRect()
+let bloco = document.getElementById("teste")
+function colisao(tiro) {
+    var tiroposicao = tiro.getBoundingClientRect()
+    console.log(tiroposicao)
+}
+
+document.addEventListener("animationstart", () => {
+    setInterval(() => {
+        if(tiroposicao.top == 0 || tiroposicao.top == undefined){
+            return
+        }
+        console.log(tiroposicao.bottom)
+    }, )
+})

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predil vs Avestruz</title>
+    <link rel="stylesheet" href="lore.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background"></div>
+    <h1 id="titulo">PREDIL VS AVESTRUZ</h1>
+    <div class="imgs" id="predil"></div>
+    <div class="imgs" id="avestruz"></div>
+    <p id="Introducao"></p>
+<script>
+    var contador = 0
+    var frameIndex = 0
+    var framewidth = 50
+function mudarFrame() {
+    var predil= document.getElementById("predil")
+    var avestruz = document.getElementById("avestruz")
+    predil.style.backgroundPosition = "50%"+ (framewidth * frameIndex) + "%"
+    avestruz.style.backgroundPosition = "50%"+ (framewidth * frameIndex) + "%"
+    contador++
+    frameIndex++
+    if(contador == 3){
+      frameIndex = 0
+      contador = 0
+    }
+}
+setInterval(mudarFrame, 500)
+let frase1 = "Era uma vez o Avestruz e o PREDIL!"
+let Introducao = document.getElementById("Introducao")
+let i = 0
+function Escrever(){
+if(i<frase1.length){
+    Introducao.innerHTML += frase1[i]
+    i++
+}}
+setInterval(Escrever, 100)
+setTimeout(() => {
+    document.getElementById("titulo").style.animation = "tituloColorido 5s linear infinite"
+}, 2300)
+</script>
+</body>
+</html>
